@@ -13,6 +13,7 @@ public class NinjaGoldGame1Application {
 		SpringApplication.run(NinjaGoldGame1Application.class, args);
 	}
 	
+	//redirect to gold directly when enter the website
 	@RequestMapping("")
 	public String index() {
 		return "redirect:/gold";

@@ -23,6 +23,8 @@ public class NinjaGoldController {
 		if (session.getAttribute("gold")==null) {
 			session.setAttribute("gold", 0);
 		}
+		
+		// debt is too big
 		if((int)session.getAttribute("gold")< -100) {
 			return "prison.jsp";
 		}
@@ -36,13 +38,16 @@ public class NinjaGoldController {
 			Model model) {
 		
 		Integer gold = (Integer) session.getAttribute("gold");
+		
+		// store activities
 		ArrayList<String> activities =(ArrayList<String>) session.getAttribute("activities");
+		// store colors to differentiate lose and earn 
 		ArrayList<String> colors= (ArrayList<String>) session.getAttribute("colors");
+		
 		if (activities==null) {
 			activities = new ArrayList<String>();
 			colors = new ArrayList<String>();
 		}
-		
 		
 		
 		Random rand = new Random();
